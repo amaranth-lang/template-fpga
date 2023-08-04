@@ -11,9 +11,11 @@ dependencies = [
     "yowasp-yosys",
     "yowasp-nextpnr-ice40",
     "yowasp-nextpnr-ecp5",
+    "yowasp-nextpnr-gowin",
 ]
 
 [tool.pdm.scripts]
 _.env_file = ".env.toolchain"
 build_ice40 = {call = "amaranth_template_fpga:build_ice40()"}
 build_ecp5 = {call = "amaranth_template_fpga:build_ecp5()"}
+build_gowin = {call = "amaranth_template_fpga:build_gowin()"}

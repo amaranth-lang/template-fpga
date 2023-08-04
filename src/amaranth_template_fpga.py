@@ -1,6 +1,7 @@
 from amaranth import *
 from amaranth_boards.icestick import ICEStickPlatform
 from amaranth_boards.versa_ecp5 import VersaECP5Platform
+from amaranth_boards.tang_nano import TangNanoPlatform
 
 
 class Blinky(Elaboratable):
@@ -25,3 +26,7 @@ def build_ice40():
 
 def build_ecp5():
     VersaECP5Platform().build(Blinky())
+
+
+def build_gowin():
+    TangNanoPlatform().build(Blinky())
