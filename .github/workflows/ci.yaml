@@ -1,0 +1,20 @@
+on: [push, pull_request, merge_group]
+
+name: CI
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out source code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: Set up Poetry and PDM
+      uses: pdm-project/setup-pdm@v3
+    - name: Install dependencies
+      run: |
+        pdm install --dev
+    - name: Run tests
+      run: |
+        pdm run test
