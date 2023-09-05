@@ -5,8 +5,7 @@ description = "Template for a generic FPGA project using Amaranth"
 
 requires-python = "~=3.8"
 dependencies = [
-    "amaranth @ git+https://github.com/amaranth-lang/amaranth",
-    "amaranth-yosys",
+    "amaranth[builtin-yosys] @ git+https://github.com/amaranth-lang/amaranth",
     "amaranth-boards @ git+https://github.com/amaranth-lang/amaranth-boards",
     "yowasp-yosys",
     "yowasp-nextpnr-ice40",
@@ -14,8 +13,14 @@ dependencies = [
     "yowasp-nextpnr-gowin",
 ]
 
+[tool.pdm.dev-dependencies]
+test = [
+    "pytest"
+]
+
 [tool.pdm.scripts]
 _.env_file = ".env.toolchain"
-build_ice40 = {call = "amaranth_template_fpga:build_ice40()"}
-build_ecp5 = {call = "amaranth_template_fpga:build_ecp5()"}
-build_gowin = {call = "amaranth_template_fpga:build_gowin()"}
+test = { cmd = "pytest" }
+build_ice40 = { call = "amaranth_template_fpga:build_ice40()" }
+build_ecp5  = { call = "amaranth_template_fpga:build_ecp5()"  }
+build_gowin = { call = "amaranth_template_fpga:build_gowin()" }

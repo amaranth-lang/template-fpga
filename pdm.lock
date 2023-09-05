@@ -2,18 +2,18 @@
 # It is not intended for manual editing.
 
 [metadata]
-groups = ["default"]
+groups = ["default", "test"]
 cross_platform = true
 static_urls = false
 lock_version = "4.3"
-content_hash = "sha256:2eceec076400a442c55d86b20fa2a2651a445ffb710d7170dc9de7dcb6572aeb"
+content_hash = "sha256:199399cdf8f0757e9c12abbd076e377dfc1e4e0c7eb2ed009a6a3cc6f3b5b28b"
 
 [[package]]
 name = "amaranth"
-version = "0.4.dev160+gb952005"
+version = "0.4.dev189+g4e07832"
 requires_python = "~=3.8"
 git = "https://github.com/amaranth-lang/amaranth"
-revision = "b9520050d115cc1c4321d1777cd16c1c05413e19"
+revision = "4e078322a04042b5f840006c200f123c3c42273b"
 summary = "Amaranth hardware definition language"
 dependencies = [
     "Jinja2~=3.0",
@@ -23,9 +23,10 @@ dependencies = [
 
 [[package]]
 name = "amaranth-boards"
-version = "0.1.dev229+g510c28e"
+version = "0.1.dev238+g91ffa38"
+requires_python = "~=3.8"
 git = "https://github.com/amaranth-lang/amaranth-boards"
-revision = "510c28e3799aeca1cbf72ba26771d0951f98412e"
+revision = "91ffa38e788a691464a6873d44537eece72ef76e"
 summary = "Board and connector definitions for Amaranth HDL"
 dependencies = [
     "amaranth<0.5,>=0.3",
@@ -33,14 +34,27 @@ dependencies = [
 
 [[package]]
 name = "amaranth-yosys"
-version = "0.25.0.0.post74"
+version = "0.25.0.0.post75"
 summary = "Specialized WebAssembly build of Yosys used by Amaranth HDL"
 dependencies = [
     "importlib-resources>=1.4; python_version < \"3.9\"",
-    "wasmtime<12,>=1",
+    "wasmtime<13,>=1",
 ]
 files = [
-    {file = "amaranth_yosys-0.25.0.0.post74-py3-none-any.whl", hash = "sha256:3bd18a704eafeaea8ff7c4311e1fb01d7823306dc500bd9b0491aada8b4f7678"},
+    {file = "amaranth_yosys-0.25.0.0.post75-py3-none-any.whl", hash = "sha256:97f2f32e8bd47f96e8646a25c6bc67abb6123641c907f2bbdcdf709559ea1f94"},
+]
+
+[[package]]
+name = "amaranth"
+version = "0.4.dev189+g4e07832"
+extras = ["builtin-yosys"]
+requires_python = "~=3.8"
+git = "https://github.com/amaranth-lang/amaranth"
+revision = "4e078322a04042b5f840006c200f123c3c42273b"
+summary = "Amaranth hardware definition language"
+dependencies = [
+    "amaranth @ git+https://github.com/amaranth-lang/amaranth",
+    "amaranth-yosys>=0.10",
 ]
 
 [[package]]
@@ -54,7 +68,7 @@ files = [
 
 [[package]]
 name = "apycula"
-version = "0.8"
+version = "0.9.0a1"
 requires_python = ">=3.6"
 summary = "Open Source tools for Gowin FPGAs"
 dependencies = [
@@ -62,21 +76,21 @@ dependencies = [
     "numpy",
 ]
 files = [
-    {file = "Apycula-0.8-py3-none-any.whl", hash = "sha256:0f3a667928904ebbffe29b303e8840c74a4853c9e437fdbe7202065358d60b83"},
-    {file = "Apycula-0.8.tar.gz", hash = "sha256:214ca1a8eb9fb71d3af9dbcdf5a7da775d08a5a79f1e851e3301724f3801bce4"},
+    {file = "Apycula-0.9.0a1-py3-none-any.whl", hash = "sha256:d83fbacb97975d7a005ef1aac32bb9e88811caaa79fbde2241fb5059fea11c68"},
+    {file = "Apycula-0.9.0a1.tar.gz", hash = "sha256:4bb3baf0f6788737cb2ebff68b7e4425a73c9020ff62a6af720c9b46df135a48"},
 ]
 
 [[package]]
 name = "click"
-version = "8.1.6"
+version = "8.1.7"
 requires_python = ">=3.7"
 summary = "Composable command line interface toolkit"
 dependencies = [
     "colorama; platform_system == \"Windows\"",
 ]
 files = [
-    {file = "click-8.1.6-py3-none-any.whl", hash = "sha256:fa244bb30b3b5ee2cae3da8f55c9e5e0c0e86093306301fb418eb9dc40fbded5"},
-    {file = "click-8.1.6.tar.gz", hash = "sha256:48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd"},
+    {file = "click-8.1.7-py3-none-any.whl", hash = "sha256:ae74fb96c20a0277a1d615f1e4d73c8414f5a98db8b799a7931d1582f3390c28"},
+    {file = "click-8.1.7.tar.gz", hash = "sha256:ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"},
 ]
 
 [[package]]
@@ -98,16 +112,36 @@ files = [
 ]
 
 [[package]]
+name = "exceptiongroup"
+version = "1.1.3"
+requires_python = ">=3.7"
+summary = "Backport of PEP 654 (exception groups)"
+files = [
+    {file = "exceptiongroup-1.1.3-py3-none-any.whl", hash = "sha256:343280667a4585d195ca1cf9cef84a4e178c4b6cf2274caef9859782b567d5e3"},
+    {file = "exceptiongroup-1.1.3.tar.gz", hash = "sha256:097acd85d473d75af5bb98e41b61ff7fe35efe6675e4f9370ec6ec5126d160e9"},
+]
+
+[[package]]
 name = "importlib-resources"
-version = "6.0.0"
+version = "6.0.1"
 requires_python = ">=3.8"
 summary = "Read resources from Python packages"
 dependencies = [
     "zipp>=3.1.0; python_version < \"3.10\"",
 ]
 files = [
-    {file = "importlib_resources-6.0.0-py3-none-any.whl", hash = "sha256:d952faee11004c045f785bb5636e8f885bed30dc3c940d5d42798a2a4541c185"},
-    {file = "importlib_resources-6.0.0.tar.gz", hash = "sha256:4cf94875a8368bd89531a756df9a9ebe1f150e0f885030b461237bc7f2d905f2"},
+    {file = "importlib_resources-6.0.1-py3-none-any.whl", hash = "sha256:134832a506243891221b88b4ae1213327eea96ceb4e407a00d790bb0626f45cf"},
+    {file = "importlib_resources-6.0.1.tar.gz", hash = "sha256:4359457e42708462b9626a04657c6208ad799ceb41e5c58c57ffa0e6a098a5d4"},
+]
+
+[[package]]
+name = "iniconfig"
+version = "2.0.0"
+requires_python = ">=3.7"
+summary = "brain-dead simple config-ini parsing"
+files = [
+    {file = "iniconfig-2.0.0-py3-none-any.whl", hash = "sha256:b6a85871a79d2e3b22d2d1b94ac2824226a63c6b741c88f7ae975f18b6778374"},
+    {file = "iniconfig-2.0.0.tar.gz", hash = "sha256:2d91e135bf72d31a410b17c16da610a82cb55f6b0477d1a902134b24a455b8b3"},
 ]
 
 [[package]]
@@ -209,6 +243,44 @@ files = [
 ]
 
 [[package]]
+name = "packaging"
+version = "23.1"
+requires_python = ">=3.7"
+summary = "Core utilities for Python packages"
+files = [
+    {file = "packaging-23.1-py3-none-any.whl", hash = "sha256:994793af429502c4ea2ebf6bf664629d07c1a9fe974af92966e4b8d2df7edc61"},
+    {file = "packaging-23.1.tar.gz", hash = "sha256:a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"},
+]
+
+[[package]]
+name = "pluggy"
+version = "1.3.0"
+requires_python = ">=3.8"
+summary = "plugin and hook calling mechanisms for python"
+files = [
+    {file = "pluggy-1.3.0-py3-none-any.whl", hash = "sha256:d89c696a773f8bd377d18e5ecda92b7a3793cbe66c87060a6fb58c7b6e1061f7"},
+    {file = "pluggy-1.3.0.tar.gz", hash = "sha256:cf61ae8f126ac6f7c451172cf30e3e43d3ca77615509771b3a984a0730651e12"},
+]
+
+[[package]]
+name = "pytest"
+version = "7.4.1"
+requires_python = ">=3.7"
+summary = "pytest: simple powerful testing with Python"
+dependencies = [
+    "colorama; sys_platform == \"win32\"",
+    "exceptiongroup>=1.0.0rc8; python_version < \"3.11\"",
+    "iniconfig",
+    "packaging",
+    "pluggy<2.0,>=0.12",
+    "tomli>=1.0.0; python_version < \"3.11\"",
+]
+files = [
+    {file = "pytest-7.4.1-py3-none-any.whl", hash = "sha256:460c9a59b14e27c602eb5ece2e47bec99dc5fc5f6513cf924a7d03a578991b1f"},
+    {file = "pytest-7.4.1.tar.gz", hash = "sha256:2f2301e797521b23e4d2585a0a3d7b5e50fdddaaf7e7d6773ea26ddb17c213ab"},
+]
+
+[[package]]
 name = "pyvcd"
 version = "0.4.0"
 requires_python = ">=3.7"
@@ -219,70 +291,80 @@ files = [
 ]
 
 [[package]]
+name = "tomli"
+version = "2.0.1"
+requires_python = ">=3.7"
+summary = "A lil' TOML parser"
+files = [
+    {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
+    {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
+]
+
+[[package]]
 name = "wasmtime"
-version = "11.0.0"
+version = "12.0.0"
 requires_python = ">=3.6"
 summary = "A WebAssembly runtime powered by Wasmtime"
 files = [
-    {file = "wasmtime-11.0.0-py3-none-any.whl", hash = "sha256:db16541c58b35d548847771c52865ed503eb42a7c6cf8a48c40210697498a527"},
-    {file = "wasmtime-11.0.0-py3-none-macosx_10_13_x86_64.whl", hash = "sha256:c752b6e0e900e9e78892c342b5a17478d60191a275a100240cf41438c4a7fb03"},
-    {file = "wasmtime-11.0.0-py3-none-macosx_11_0_arm64.whl", hash = "sha256:17cfca43797409be2764656affaf20906fd5ae9e1690a0431f6c06e8ef008fae"},
-    {file = "wasmtime-11.0.0-py3-none-manylinux1_x86_64.whl", hash = "sha256:7668c6f3fc61e169fa74f89398e0347403a6f8d008d10d136c66cabf89586d1e"},
-    {file = "wasmtime-11.0.0-py3-none-manylinux2014_aarch64.whl", hash = "sha256:bcd8e3c155dc076706b9577516299a8a5772f1a99f1acce3befe47b4510f9ed9"},
-    {file = "wasmtime-11.0.0-py3-none-win_amd64.whl", hash = "sha256:df6fdd5da8b7826f575d78ddd7388102099ee635321de58f9bc847adcf3f8f2f"},
+    {file = "wasmtime-12.0.0-py3-none-any.whl", hash = "sha256:1fee5ac11726cad1f69611779e44ffcb60e912479d1a3c7c77099c3c2f068c36"},
+    {file = "wasmtime-12.0.0-py3-none-macosx_10_13_x86_64.whl", hash = "sha256:d5e284b37204535a2817f3563102ce8a41451a5f4203db059b051640bda8bcb8"},
+    {file = "wasmtime-12.0.0-py3-none-macosx_11_0_arm64.whl", hash = "sha256:2a931214e62aa3d23c61b5f5d2cc47ce10d708f4d8d02e12ea87004c0837e650"},
+    {file = "wasmtime-12.0.0-py3-none-manylinux1_x86_64.whl", hash = "sha256:fa5372d8f3e2bfcaaf7cfffb0d5efc640351889d7aed6d34711f32a85fe9b5ff"},
+    {file = "wasmtime-12.0.0-py3-none-manylinux2014_aarch64.whl", hash = "sha256:c72d1f9b253b97aff19375d6980e3e6380929424fe07b56364413bf54fd80049"},
+    {file = "wasmtime-12.0.0-py3-none-win_amd64.whl", hash = "sha256:7eee12e6bb72123b3beec757d6b48f90b09a1097b1c6dadff7013ffbc46df2fe"},
 ]
 
 [[package]]
 name = "yowasp-nextpnr-ecp5"
-version = "0.6.0.0.post440"
+version = "0.6.0.0.post445"
 summary = "nextpnr-ecp5 FPGA place and route tool"
 dependencies = [
     "yowasp-runtime~=1.1",
 ]
 files = [
-    {file = "yowasp_nextpnr_ecp5-0.6.0.0.post440-py3-none-any.whl", hash = "sha256:a737aed69a578edca889af7b76dc228c48006faac3506c4a59bbbfe121efa19f"},
+    {file = "yowasp_nextpnr_ecp5-0.6.0.0.post445-py3-none-any.whl", hash = "sha256:8e16358f8c0e17b5edf3964c4e01d41b85df57742c8f01dbd9588726f6f361f1"},
 ]
 
 [[package]]
 name = "yowasp-nextpnr-gowin"
-version = "0.6.0.0.post440"
+version = "0.6.0.0.post445"
 summary = "nextpnr-gowin FPGA place and route tool"
 dependencies = [
-    "Apycula==0.8",
+    "Apycula==0.9.0a1",
     "yowasp-runtime~=1.1",
 ]
 files = [
-    {file = "yowasp_nextpnr_gowin-0.6.0.0.post440-py3-none-any.whl", hash = "sha256:5a7f4cbe7737f5c6af937d9b5545224d433d9461a834adcf4e1ac76d0114e7ee"},
+    {file = "yowasp_nextpnr_gowin-0.6.0.0.post445-py3-none-any.whl", hash = "sha256:ca9b685974033413f4fc7c0d8112137c7354bd4088d073c2d24b50ef94f5b66e"},
 ]
 
 [[package]]
 name = "yowasp-nextpnr-ice40"
-version = "0.6.0.0.post440"
+version = "0.6.0.0.post445"
 summary = "nextpnr-ice40 FPGA place and route tool"
 dependencies = [
     "yowasp-runtime~=1.1",
 ]
 files = [
-    {file = "yowasp_nextpnr_ice40-0.6.0.0.post440-py3-none-any.whl", hash = "sha256:a0ce124c254410c7dbd843dcb438d63f30b0427d626e83a39b5f9614688ed900"},
+    {file = "yowasp_nextpnr_ice40-0.6.0.0.post445-py3-none-any.whl", hash = "sha256:0ff37a2d113fb1176202620c727eb59c48eaf774b8871524e4975d4f774e4ed1"},
 ]
 
 [[package]]
 name = "yowasp-runtime"
-version = "1.31"
+version = "1.36"
 requires_python = "~=3.7"
 summary = "Common runtime for YoWASP packages"
 dependencies = [
     "appdirs~=1.4",
     "importlib-resources; python_version < \"3.9\"",
-    "wasmtime<12,>=1.0",
+    "wasmtime<13,>=1.0",
 ]
 files = [
-    {file = "yowasp_runtime-1.31-py3-none-any.whl", hash = "sha256:c50d9937405335778b65932ca909ee897d2460b7b7e566c19a0cac04a372fa05"},
+    {file = "yowasp_runtime-1.36-py3-none-any.whl", hash = "sha256:f8d44fdfd6218456948149a650aa1b5a05d3c47da67f01f3cb4fdb685693a401"},
 ]
 
 [[package]]
 name = "yowasp-yosys"
-version = "0.31.0.13.post553"
+version = "0.32.0.43.post561"
 summary = "Yosys Open SYnthesis Suite"
 dependencies = [
     "click",
@@ -290,7 +372,7 @@ dependencies = [
     "yowasp-runtime~=1.12",
 ]
 files = [
-    {file = "yowasp_yosys-0.31.0.13.post553-py3-none-any.whl", hash = "sha256:ace8d93a15d21b145afcbbe664269961ecb94f59180b06e8418a0a6a617bad21"},
+    {file = "yowasp_yosys-0.32.0.43.post561-py3-none-any.whl", hash = "sha256:2d2d8200b1ead7b6b6be46ea4ee1da61a820dcf31f810907f5ada5d9199b18ac"},
 ]
 
 [[package]]
