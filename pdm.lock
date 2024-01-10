@@ -3,67 +3,59 @@
 
 [metadata]
 groups = ["default", "test"]
-cross_platform = true
-static_urls = false
-lock_version = "4.3"
-content_hash = "sha256:199399cdf8f0757e9c12abbd076e377dfc1e4e0c7eb2ed009a6a3cc6f3b5b28b"
+strategy = ["cross_platform"]
+lock_version = "4.4.1"
+content_hash = "sha256:aac66f8bb426604723b1466d05d38767cfa317c856f20d851436aef128d356f7"
 
 [[package]]
 name = "amaranth"
-version = "0.4.dev189+g4e07832"
+version = "0.4.0"
 requires_python = "~=3.8"
-git = "https://github.com/amaranth-lang/amaranth"
-revision = "4e078322a04042b5f840006c200f123c3c42273b"
 summary = "Amaranth hardware definition language"
 dependencies = [
     "Jinja2~=3.0",
     "importlib-resources; python_version < \"3.9\"",
     "pyvcd<0.5,>=0.2.2",
 ]
+files = [
+    {file = "amaranth-0.4.0-py3-none-any.whl", hash = "sha256:784e0cc7fdf0378a632b1f0d56180a26bc7718fa55b1aaa886b87340f02f2c7a"},
+]
 
 [[package]]
 name = "amaranth-boards"
-version = "0.1.dev238+g91ffa38"
+version = "0.1.dev241"
 requires_python = "~=3.8"
 git = "https://github.com/amaranth-lang/amaranth-boards"
-revision = "91ffa38e788a691464a6873d44537eece72ef76e"
+revision = "170675812b71ee722bcf8ccdb88409a9ad97ffe2"
 summary = "Board and connector definitions for Amaranth HDL"
 dependencies = [
-    "amaranth<0.5,>=0.3",
+    "amaranth<0.5,>=0.4",
 ]
 
 [[package]]
 name = "amaranth-yosys"
-version = "0.25.0.0.post75"
+version = "0.35.0.0.post81"
 summary = "Specialized WebAssembly build of Yosys used by Amaranth HDL"
 dependencies = [
     "importlib-resources>=1.4; python_version < \"3.9\"",
-    "wasmtime<13,>=1",
+    "wasmtime<16,>=1",
 ]
 files = [
-    {file = "amaranth_yosys-0.25.0.0.post75-py3-none-any.whl", hash = "sha256:97f2f32e8bd47f96e8646a25c6bc67abb6123641c907f2bbdcdf709559ea1f94"},
+    {file = "amaranth_yosys-0.35.0.0.post81-py3-none-any.whl", hash = "sha256:9860d3a24d62f84cc65de3e33f6cb7b2aba19ab9203d7c80c084372a17fbbf6b"},
 ]
 
 [[package]]
 name = "amaranth"
-version = "0.4.dev189+g4e07832"
+version = "0.4.0"
 extras = ["builtin-yosys"]
 requires_python = "~=3.8"
-git = "https://github.com/amaranth-lang/amaranth"
-revision = "4e078322a04042b5f840006c200f123c3c42273b"
 summary = "Amaranth hardware definition language"
 dependencies = [
-    "amaranth @ git+https://github.com/amaranth-lang/amaranth",
-    "amaranth-yosys>=0.10",
+    "amaranth-yosys>=0.35",
+    "amaranth==0.4.0",
 ]
-
-[[package]]
-name = "appdirs"
-version = "1.4.4"
-summary = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
 files = [
-    {file = "appdirs-1.4.4-py2.py3-none-any.whl", hash = "sha256:a841dacd6b99318a741b166adb07e19ee71a274450e68237b4650ca1055ab128"},
-    {file = "appdirs-1.4.4.tar.gz", hash = "sha256:7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"},
+    {file = "amaranth-0.4.0-py3-none-any.whl", hash = "sha256:784e0cc7fdf0378a632b1f0d56180a26bc7718fa55b1aaa886b87340f02f2c7a"},
 ]
 
 [[package]]
@@ -113,25 +105,25 @@ files = [
 
 [[package]]
 name = "exceptiongroup"
-version = "1.1.3"
+version = "1.2.0"
 requires_python = ">=3.7"
 summary = "Backport of PEP 654 (exception groups)"
 files = [
-    {file = "exceptiongroup-1.1.3-py3-none-any.whl", hash = "sha256:343280667a4585d195ca1cf9cef84a4e178c4b6cf2274caef9859782b567d5e3"},
-    {file = "exceptiongroup-1.1.3.tar.gz", hash = "sha256:097acd85d473d75af5bb98e41b61ff7fe35efe6675e4f9370ec6ec5126d160e9"},
+    {file = "exceptiongroup-1.2.0-py3-none-any.whl", hash = "sha256:4bfd3996ac73b41e9b9628b04e079f193850720ea5945fc96a08633c66912f14"},
+    {file = "exceptiongroup-1.2.0.tar.gz", hash = "sha256:91f5c769735f051a4290d52edd0858999b57e5876e9f85937691bd4c9fa3ed68"},
 ]
 
 [[package]]
 name = "importlib-resources"
-version = "6.0.1"
+version = "6.1.1"
 requires_python = ">=3.8"
 summary = "Read resources from Python packages"
 dependencies = [
     "zipp>=3.1.0; python_version < \"3.10\"",
 ]
 files = [
-    {file = "importlib_resources-6.0.1-py3-none-any.whl", hash = "sha256:134832a506243891221b88b4ae1213327eea96ceb4e407a00d790bb0626f45cf"},
-    {file = "importlib_resources-6.0.1.tar.gz", hash = "sha256:4359457e42708462b9626a04657c6208ad799ceb41e5c58c57ffa0e6a098a5d4"},
+    {file = "importlib_resources-6.1.1-py3-none-any.whl", hash = "sha256:e8bf90d8213b486f428c9c39714b920041cb02c184686a3dee24905aaa8105d6"},
+    {file = "importlib_resources-6.1.1.tar.gz", hash = "sha256:3893a00122eafde6894c59914446a512f728a0c1a45f9bb9b63721b6bacf0b4a"},
 ]
 
 [[package]]
@@ -183,6 +175,16 @@ files = [
     {file = "MarkupSafe-2.1.3-cp311-cp311-musllinux_1_1_x86_64.whl", hash = "sha256:5bbe06f8eeafd38e5d0a4894ffec89378b6c6a625ff57e3028921f8ff59318ac"},
     {file = "MarkupSafe-2.1.3-cp311-cp311-win32.whl", hash = "sha256:dd15ff04ffd7e05ffcb7fe79f1b98041b8ea30ae9234aed2a9168b5797c3effb"},
     {file = "MarkupSafe-2.1.3-cp311-cp311-win_amd64.whl", hash = "sha256:134da1eca9ec0ae528110ccc9e48041e0828d79f24121a1a146161103c76e686"},
+    {file = "MarkupSafe-2.1.3-cp312-cp312-macosx_10_9_universal2.whl", hash = "sha256:f698de3fd0c4e6972b92290a45bd9b1536bffe8c6759c62471efaa8acb4c37bc"},
+    {file = "MarkupSafe-2.1.3-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:aa57bd9cf8ae831a362185ee444e15a93ecb2e344c8e52e4d721ea3ab6ef1823"},
+    {file = "MarkupSafe-2.1.3-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:ffcc3f7c66b5f5b7931a5aa68fc9cecc51e685ef90282f4a82f0f5e9b704ad11"},
+    {file = "MarkupSafe-2.1.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:47d4f1c5f80fc62fdd7777d0d40a2e9dda0a05883ab11374334f6c4de38adffd"},
+    {file = "MarkupSafe-2.1.3-cp312-cp312-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:1f67c7038d560d92149c060157d623c542173016c4babc0c1913cca0564b9939"},
+    {file = "MarkupSafe-2.1.3-cp312-cp312-musllinux_1_1_aarch64.whl", hash = "sha256:9aad3c1755095ce347e26488214ef77e0485a3c34a50c5a5e2471dff60b9dd9c"},
+    {file = "MarkupSafe-2.1.3-cp312-cp312-musllinux_1_1_i686.whl", hash = "sha256:14ff806850827afd6b07a5f32bd917fb7f45b046ba40c57abdb636674a8b559c"},
+    {file = "MarkupSafe-2.1.3-cp312-cp312-musllinux_1_1_x86_64.whl", hash = "sha256:8f9293864fe09b8149f0cc42ce56e3f0e54de883a9de90cd427f191c346eb2e1"},
+    {file = "MarkupSafe-2.1.3-cp312-cp312-win32.whl", hash = "sha256:715d3562f79d540f251b99ebd6d8baa547118974341db04f5ad06d5ea3eb8007"},
+    {file = "MarkupSafe-2.1.3-cp312-cp312-win_amd64.whl", hash = "sha256:1b8dd8c3fd14349433c79fa8abeb573a55fc0fdd769133baac1f5e07abf54aeb"},
     {file = "MarkupSafe-2.1.3-cp38-cp38-macosx_10_9_universal2.whl", hash = "sha256:2ef12179d3a291be237280175b542c07a36e7f60718296278d8593d21ca937d4"},
     {file = "MarkupSafe-2.1.3-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:2c1b19b3aaacc6e57b7e25710ff571c24d6c3613a45e905b1fde04d691b98ee0"},
     {file = "MarkupSafe-2.1.3-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:8afafd99945ead6e075b973fefa56379c5b5c53fd8937dad92c662da5d8fd5ee"},
@@ -244,12 +246,22 @@ files = [
 
 [[package]]
 name = "packaging"
-version = "23.1"
+version = "23.2"
 requires_python = ">=3.7"
 summary = "Core utilities for Python packages"
 files = [
-    {file = "packaging-23.1-py3-none-any.whl", hash = "sha256:994793af429502c4ea2ebf6bf664629d07c1a9fe974af92966e4b8d2df7edc61"},
-    {file = "packaging-23.1.tar.gz", hash = "sha256:a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"},
+    {file = "packaging-23.2-py3-none-any.whl", hash = "sha256:8c491190033a9af7e1d931d0b5dacc2ef47509b34dd0de67ed209b5203fc88c7"},
+    {file = "packaging-23.2.tar.gz", hash = "sha256:048fb0e9405036518eaaf48a55953c750c11e1a1b68e0dd1a9d62ed0c092cfc5"},
+]
+
+[[package]]
+name = "platformdirs"
+version = "3.11.0"
+requires_python = ">=3.7"
+summary = "A small Python package for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
+files = [
+    {file = "platformdirs-3.11.0-py3-none-any.whl", hash = "sha256:e9d171d00af68be50e9202731309c4e658fd8bc76f55c11c7dd760d023bda68e"},
+    {file = "platformdirs-3.11.0.tar.gz", hash = "sha256:cf8ee52a3afdb965072dcc652433e0c7e3e40cf5ea1477cd4b3b1d2eb75495b3"},
 ]
 
 [[package]]
@@ -264,7 +276,7 @@ files = [
 
 [[package]]
 name = "pytest"
-version = "7.4.1"
+version = "7.4.4"
 requires_python = ">=3.7"
 summary = "pytest: simple powerful testing with Python"
 dependencies = [
@@ -276,8 +288,8 @@ dependencies = [
     "tomli>=1.0.0; python_version < \"3.11\"",
 ]
 files = [
-    {file = "pytest-7.4.1-py3-none-any.whl", hash = "sha256:460c9a59b14e27c602eb5ece2e47bec99dc5fc5f6513cf924a7d03a578991b1f"},
-    {file = "pytest-7.4.1.tar.gz", hash = "sha256:2f2301e797521b23e4d2585a0a3d7b5e50fdddaaf7e7d6773ea26ddb17c213ab"},
+    {file = "pytest-7.4.4-py3-none-any.whl", hash = "sha256:b090cdf5ed60bf4c45261be03239c2c1c22df034fbffe691abe93cd80cea01d8"},
+    {file = "pytest-7.4.4.tar.gz", hash = "sha256:2cf0005922c6ace4a3e2ec8b4080eb0d9753fdc93107415332f50ce9e7994280"},
 ]
 
 [[package]]
@@ -302,16 +314,16 @@ files = [
 
 [[package]]
 name = "wasmtime"
-version = "12.0.0"
-requires_python = ">=3.6"
+version = "15.0.0"
+requires_python = ">=3.8"
 summary = "A WebAssembly runtime powered by Wasmtime"
 files = [
-    {file = "wasmtime-12.0.0-py3-none-any.whl", hash = "sha256:1fee5ac11726cad1f69611779e44ffcb60e912479d1a3c7c77099c3c2f068c36"},
-    {file = "wasmtime-12.0.0-py3-none-macosx_10_13_x86_64.whl", hash = "sha256:d5e284b37204535a2817f3563102ce8a41451a5f4203db059b051640bda8bcb8"},
-    {file = "wasmtime-12.0.0-py3-none-macosx_11_0_arm64.whl", hash = "sha256:2a931214e62aa3d23c61b5f5d2cc47ce10d708f4d8d02e12ea87004c0837e650"},
-    {file = "wasmtime-12.0.0-py3-none-manylinux1_x86_64.whl", hash = "sha256:fa5372d8f3e2bfcaaf7cfffb0d5efc640351889d7aed6d34711f32a85fe9b5ff"},
-    {file = "wasmtime-12.0.0-py3-none-manylinux2014_aarch64.whl", hash = "sha256:c72d1f9b253b97aff19375d6980e3e6380929424fe07b56364413bf54fd80049"},
-    {file = "wasmtime-12.0.0-py3-none-win_amd64.whl", hash = "sha256:7eee12e6bb72123b3beec757d6b48f90b09a1097b1c6dadff7013ffbc46df2fe"},
+    {file = "wasmtime-15.0.0-py3-none-any.whl", hash = "sha256:24de208dccea948e924b6af23c2b659f08bdd58e4ef5b549e2913a022cef2e50"},
+    {file = "wasmtime-15.0.0-py3-none-macosx_10_13_x86_64.whl", hash = "sha256:137f6880a2a7eeec89ac98b46ef5e7e6082154cbd509926ec80d45a558432a24"},
+    {file = "wasmtime-15.0.0-py3-none-macosx_11_0_arm64.whl", hash = "sha256:4bfd230624b3972b869b3fae57c605556c00b1acdb18f3d60b5a21dcac5f1670"},
+    {file = "wasmtime-15.0.0-py3-none-manylinux1_x86_64.whl", hash = "sha256:79a416bd65468027842a15d21b78b4aa94ecca8281ae9a8d299a7860710882df"},
+    {file = "wasmtime-15.0.0-py3-none-manylinux2014_aarch64.whl", hash = "sha256:f74bd2af9dc7af37efae6efd1153377de6f9c43e88728448334eb6b5950718f5"},
+    {file = "wasmtime-15.0.0-py3-none-win_amd64.whl", hash = "sha256:fcad612253877a432c8f3c31c35adb521c59315fe6df0a7d7eb9b26a95f588b2"},
 ]
 
 [[package]]
@@ -350,21 +362,21 @@ files = [
 
 [[package]]
 name = "yowasp-runtime"
-version = "1.36"
-requires_python = "~=3.7"
+version = "1.46"
+requires_python = "~=3.8"
 summary = "Common runtime for YoWASP packages"
 dependencies = [
-    "appdirs~=1.4",
     "importlib-resources; python_version < \"3.9\"",
-    "wasmtime<13,>=1.0",
+    "platformdirs~=3.0",
+    "wasmtime<16,>=1.0",
 ]
 files = [
-    {file = "yowasp_runtime-1.36-py3-none-any.whl", hash = "sha256:f8d44fdfd6218456948149a650aa1b5a05d3c47da67f01f3cb4fdb685693a401"},
+    {file = "yowasp_runtime-1.46-py3-none-any.whl", hash = "sha256:cbfbb0a77d2c82c8ae7381becda9691e19126ce65102778396826a50d5a4d4e8"},
 ]
 
 [[package]]
 name = "yowasp-yosys"
-version = "0.32.0.43.post561"
+version = "0.36.0.8.post620"
 summary = "Yosys Open SYnthesis Suite"
 dependencies = [
     "click",
@@ -372,15 +384,15 @@ dependencies = [
     "yowasp-runtime~=1.12",
 ]
 files = [
-    {file = "yowasp_yosys-0.32.0.43.post561-py3-none-any.whl", hash = "sha256:2d2d8200b1ead7b6b6be46ea4ee1da61a820dcf31f810907f5ada5d9199b18ac"},
+    {file = "yowasp_yosys-0.36.0.8.post620-py3-none-any.whl", hash = "sha256:8d3da114d3c9689623f2fdf59b7abef040016fbc015cd8d973489f223fe851a8"},
 ]
 
 [[package]]
 name = "zipp"
-version = "3.16.2"
+version = "3.17.0"
 requires_python = ">=3.8"
 summary = "Backport of pathlib-compatible object wrapper for zip files"
 files = [
-    {file = "zipp-3.16.2-py3-none-any.whl", hash = "sha256:679e51dd4403591b2d6838a48de3d283f3d188412a9782faadf845f298736ba0"},
-    {file = "zipp-3.16.2.tar.gz", hash = "sha256:ebc15946aa78bd63458992fc81ec3b6f7b1e92d51c35e6de1c3804e73b799147"},
+    {file = "zipp-3.17.0-py3-none-any.whl", hash = "sha256:0e923e726174922dce09c53c59ad483ff7bbb8e572e00c7f7c46b88556409f31"},
+    {file = "zipp-3.17.0.tar.gz", hash = "sha256:84e64a1c28cf7e91ed2078bb8cc8c259cb19b76942096c8d7b84947690cabaf0"},
 ]
