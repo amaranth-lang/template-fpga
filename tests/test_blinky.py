@@ -6,16 +6,16 @@ from amaranth_template_fpga.blinky import Blinky
 def test_blinky_frequency():
     blinky = Blinky(frequency=10)
 
-    def testbench():
+    async def testbench(ctx):
         for _ in range(5):
-            assert (yield blinky.led) == 0
-            yield
+            assert ctx.get(blinky.led) == 0
+            await ctx.tick()
         for _ in range(5):
-            assert (yield blinky.led) == 1
-            yield
-        assert (yield blinky.led) == 0
+            assert ctx.get(blinky.led) == 1
+            await ctx.tick()
+        assert ctx.get(blinky.led) == 0
 
     sim = Simulator(blinky)
     sim.add_clock(period=1e-2)
-    sim.add_sync_process(testbench)
+    sim.add_testbench(testbench)
     sim.run()

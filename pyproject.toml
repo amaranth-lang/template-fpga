@@ -5,7 +5,7 @@ description = "Template for a generic FPGA project using Amaranth"
 
 requires-python = "~=3.8"
 dependencies = [
-    "amaranth[builtin-yosys]~=0.4",
+    "amaranth[builtin-yosys]~=0.5",
     "amaranth-boards @ git+https://github.com/amaranth-lang/amaranth-boards",
     "yowasp-yosys",
     "yowasp-nextpnr-ice40",
